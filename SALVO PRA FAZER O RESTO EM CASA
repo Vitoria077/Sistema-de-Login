@@ -1,6 +1,7 @@
 #importar as bibliotecas
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 
 #Criar Nossa Janela
 jan = Tk()
@@ -8,5 +9,30 @@ jan.title("DP Systems - Acess Painel")
 jan.geometry("600x300")
 jan.configure(background="white")
 jan.resizable(width=False, height=False)
+
+logo= PhotoImage(file="icon/logo.png")
+
+LetFrame = Frame(jan, width=200, height=300, bg="PURPLE", relief="raise")
+LetFrame.pack(side=LEFT)
+
+RightFrame = Frame(jan, width=395, height=300, bg="PURPLE", relief="raise")
+RightFrame.pack(side=RIGHT)
+
+LogoLabel = Label(LetFrame, image=logo, bg="PURPLE")
+LogoLabel.place(x=0, y=40)
+
+#Username
+UserLabel = Label(RightFrame, text="Username:", font=("Questrial", 10), bg="PURPLE", fg="White")
+UserLabel.place(x =75, y=100)
+
+UserEntry = ttk.Entry(RightFrame, width=30)
+UserEntry.place(x=155, y=100)
+
+#Password
+PassLabel = Label(RightFrame, text="Password:", font=("Questrial", 10), bg="PURPLE", fg="White")
+PassLabel.place(x =75, y=200)
+
+PassEntry = ttk.Entry(RightFrame, width=30)
+PassEntry.place(x=155, y=200)
 
 jan.mainloop()
